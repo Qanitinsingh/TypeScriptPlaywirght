@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Practice Form</title>
+    <style>
+      body { font-family: Arial; padding: 20px }
+      label { display:block; margin-top:8px }
+    </style>
+  </head>
+  <body>
+    <h2>Practice Form</h2>
+    <form id="practice-form">
+      <fieldset>
+        <legend>Practice Form</legend>
+
+        <label>Level:
+          <select id="level">
+            <option value="novice">Novice</option>
+            <option value="intermediate">Intermediate</option>
+            <option value="expert">Expert</option>
+          </select>
+        </label>
+
+        <label>Name: <input id="name" type="text" /></label>
+        <label>Email: <input id="email" type="email" /></label>
+
+        <label>Subscribe: <input id="subscribe" type="checkbox" /></label>
+
+        <div>
+          Choose experience:
+          <label><input name="exp" type="radio" value="beginner" /> Beginner</label>
+          <label><input name="exp" type="radio" value="pro" /> Pro</label>
+        </div>
+
+        <label>Category:
+          <select id="category">
+            <option value="basic">Basic</option>
+            <option value="advanced">Advanced</option>
+          </select>
+        </label>
+
+        <label>Start date: <input id="start" type="date" /></label>
+
+        <label>Upload file: <input id="file" type="file" /></label>
+
+        <div style="margin-top:12px">
+          <div id="drag-source" draggable="true" style="width:120px;height:40px;background:#eee;padding:8px;border:1px solid #ccc">Drag me</div>
+          <div id="drop-target" style="width:200px;height:80px;background:#fafafa;padding:8px;border:2px dashed #ccc;margin-top:8px">Drop here</div>
+        </div>
+
+        <label>Text Box: <textarea id="textbox"></textarea></label>
+
+        <button id="submit">Submit</button>
+      </fieldset>
+    </form>
+    <div id="result" style="margin-top:16px;color:green"></div>
+    <script>
+      document.getElementById('practice-form').addEventListener('submit', function (e) {
+        e.preventDefault();
+        const level = document.getElementById('level').value;
+        const name = document.getElementById('name').value;
+        const subscribe = document.getElementById('subscribe').checked;
+        const exp = document.querySelector('input[name="exp"]:checked')?.value || '';
+        const category = document.getElementById('category').value;
+        const start = document.getElementById('start').value;
+        const text = document.getElementById('textbox').value;
+        document.getElementById('result').textContent = `Submitted: ${level}|${name}|${subscribe}|${exp}|${category}|${start}|${text}`;
+      });
+
+      // drag drop behavior
+      const src = document.getElementById('drag-source');
+      const tgt = document.getElementById('drop-target');
+      src.addEventListener('dragstart', function (ev) {
+        ev.dataTransfer.setData('text/plain', 'dragged');
+      });
+      tgt.addEventListener('dragover', function (ev) { ev.preventDefault(); });
+      tgt.addEventListener('drop', function (ev) { ev.preventDefault(); tgt.textContent = 'Dropped'; });
+    </script>
+  </body>
+</html>

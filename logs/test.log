@@ -1,0 +1,10 @@
+{"level":"info","message":"Launching single browser session"}
+{"level":"info","message":"Navigating to https://example.com/"}
+{"level":"info","message":"Clicking Novice"}
+{"level":"info","message":"Closing browser session"}
+{"level":"info","message":"Launching single browser session"}
+{"level":"info","message":"Using local fixture page"}
+{"level":"info","message":"Clicking Novice"}
+{"level":"info","message":"Clicking Intermediate"}
+{"level":"info","message":"Clicking Expert"}
+{"level":"info","message":"Closing browser session"}

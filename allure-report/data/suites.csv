@@ -1,0 +1,4 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","82","run3 - click Expert","chromium","2026-06-11","passed","2026-06-11","Homepage flows in single browser session","homepage.spec.ts","",""
+"","85","run2 - click Intermediate","chromium","2026-06-11","passed","2026-06-11","Homepage flows in single browser session","homepage.spec.ts","",""
+"","1667","run1 - launch URL and click Novice","chromium","2026-06-11","passed","2026-06-11","Homepage flows in single browser session","homepage.spec.ts","",""
