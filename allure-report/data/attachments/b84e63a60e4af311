@@ -1,0 +1,119 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: homepage.spec.ts >> Homepage flows in single browser session >> run1 - launch URL and click Novice
+- Location: tests/homepage.spec.ts:40:7
+
+# Error details
+
+```
+Test timeout of 30000ms exceeded.
+```
+
+```
+Error: page.click: Target page, context or browser has been closed
+Call log:
+  - waiting for locator('#novice')
+
+```
+
+# Page snapshot
+
+```yaml
+- generic [ref=e3]:
+  - navigation [ref=e4]:
+    - list [ref=e7]:
+      - listitem [ref=e8]:
+        - link "HTML & jQuery" [ref=e9] [cursor=pointer]:
+          - /url: "#"
+      - listitem [ref=e10]:
+        - link "Angular" [ref=e11] [cursor=pointer]:
+          - /url: "#"
+      - listitem [ref=e12]:
+        - link "React" [ref=e13] [cursor=pointer]:
+          - /url: "#"
+      - listitem [ref=e14]:
+        - link "Vue js" [ref=e15] [cursor=pointer]:
+          - /url: "#"
+      - listitem [ref=e16]:
+        - link "Salesforce UI" [ref=e17] [cursor=pointer]:
+          - /url: "#"
+      - listitem [ref=e18]:
+        - link "Kendo UI" [ref=e19] [cursor=pointer]:
+          - /url: "#"
+      - listitem [ref=e20]:
+        - link "DB Testing" [ref=e21] [cursor=pointer]:
+          - /url: "#"
+      - listitem [ref=e22]:
+        - link "Admin" [ref=e23] [cursor=pointer]:
+          - /url: "#"
+  - strong [ref=e26]: Upskill with 1000+ Test Automation challenges | SDET Mastery Platform
+  - generic [ref=e27]:
+    - complementary [ref=e28]:
+      - button "Novice " [ref=e30] [cursor=pointer]:
+        - generic [ref=e31]: Novice
+        - generic [ref=e32]: 
+      - button "Intermediate " [ref=e34] [cursor=pointer]:
+        - generic [ref=e35]: Intermediate
+        - generic [ref=e36]: 
+      - button "Expert " [ref=e38] [cursor=pointer]:
+        - generic [ref=e39]: Expert
+        - generic [ref=e40]: 
+    - main [ref=e41]:
+      - generic [ref=e42]:
+        - heading "Welcome" [level=2] [ref=e43]
+        - paragraph [ref=e44]: Select a topic from the left menu.
+    - complementary [ref=e45]:
+      - heading "Info & Links" [level=5] [ref=e46]
+      - list [ref=e47]:
+        - listitem [ref=e48]:
+          - link "Documentation" [ref=e49] [cursor=pointer]:
+            - /url: "#!"
+        - listitem [ref=e50]:
+          - link "Support" [ref=e51] [cursor=pointer]:
+            - /url: "#!"
+        - listitem [ref=e52]:
+          - link "Community" [ref=e53] [cursor=pointer]:
+            - /url: "#!"
+  - contentinfo [ref=e54]: © 2025 QA Automation Practice Website
+```
+
+# Test source
+
+```ts
+  1  | import { Page } from '@playwright/test';
+  2  | 
+  3  | export class HomePage {
+  4  |   readonly page: Page;
+  5  |   readonly noviceSelector = '#novice';
+  6  |   readonly intermediateSelector = '#intermediate';
+  7  |   readonly expertSelector = '#expert';
+  8  | 
+  9  |   constructor(page: Page) {
+  10 |     this.page = page;
+  11 |   }
+  12 | 
+  13 |   async goto(url: string) {
+  14 |     await this.page.goto(url);
+  15 |   }
+  16 | 
+  17 |   async clickNovice() {
+> 18 |     await this.page.click(this.noviceSelector);
+     |                     ^ Error: page.click: Target page, context or browser has been closed
+  19 |   }
+  20 | 
+  21 |   async clickIntermediate() {
+  22 |     await this.page.click(this.intermediateSelector);
+  23 |   }
+  24 | 
+  25 |   async clickExpert() {
+  26 |     await this.page.click(this.expertSelector);
+  27 |   }
+  28 | }
+  29 | 
+```

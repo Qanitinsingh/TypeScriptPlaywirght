@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Landing</title>
+    <style>body{font-family:Arial;padding:20px}button{margin:8px;padding:8px 12px}</style>
+  </head>
+  <body>
+    <h1>Test Landing Page</h1>
+    <div id="launchUrl" data-url="https://alphabetaops.com/"></div>
+    <button id="novice">Novice - Practice Form</button>
+    <button id="intermediate">Intermediate</button>
+    <button id="expert">Expert</button>
+    <script>
+      document.getElementById('novice').addEventListener('click', () => {
+        // navigate to local practice form container
+        location.href = 'practice-form.html';
+      });
+      document.getElementById('intermediate').addEventListener('click', () => {
+        location.href = 'practice-form.html';
+      });
+      document.getElementById('expert').addEventListener('click', () => {
+        location.href = 'practice-form.html';
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,9 @@
+{
+  "name": "Intermediate Dev",
+  "email": "intermediate@example.com",
+  "level": "intermediate",
+  "experienceYears": 5,
+  "category": "advanced",
+  "startDate": "2019-01-01",
+  "text": "Intermediate developer"
+}

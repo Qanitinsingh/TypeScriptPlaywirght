@@ -1,0 +1,9 @@
+{
+  "name": "Expert Dev",
+  "email": "expert@example.com",
+  "level": "expert",
+  "experienceYears": 12,
+  "category": "advanced",
+  "startDate": "2010-05-01",
+  "text": "Expert developer"
+}
